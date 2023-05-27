@@ -2,7 +2,7 @@ import * as jwt from 'jsonwebtoken'
 
 //Criando o token de validação
 export const createUserToken = async(user, req, res) => {
-    var msg;
+    let msg:string;
     const token = jwt.sign({
         id: user.id,
         name: user.name,

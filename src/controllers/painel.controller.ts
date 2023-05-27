@@ -1,12 +1,14 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Req, Request, Res } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm";
-import { Response } from "express";
-import { PainelSchema } from "src/Schemas/painel.schema";
-import { getToken } from "src/helpers/get-token";
-import { PainelModel } from "src/models/painel.model";
 import { Repository } from "typeorm";
+import { Response } from "express";
 import * as jwt from 'jsonwebtoken'
+
+import { PainelSchema } from "src/Schemas/painel.schema";
 import { UserModel } from "src/models/user.model";
+import { PainelModel } from "src/models/painel.model";
+
+import { getToken } from "src/helpers/get-token";
 import { calculationPainel } from "src/helpers/calculation-painel";
 
 @Controller('/calculo')
@@ -47,9 +49,12 @@ export class PainelController {
         }
                 
         try {
-            await this.model.save(data)
-
-            res.status(201).json({ message: 'Cálculo efetuado com sucesso!' })
+            const calcSave = await this.model.save(data)
+            
+            res.status(201).json({ 
+                message: 'Cálculo efetuado com sucesso!', 
+                Registro: calcSave.id,
+            })
         } catch (error) {
             res.status(500).json({ message: 'houve um erro, tente novamente!' })
             console.log(error)
@@ -197,6 +202,4 @@ export class PainelController {
 
         return
     }
-
-    //pegar o usuário pelo id
 }

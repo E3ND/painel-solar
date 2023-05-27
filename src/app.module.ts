@@ -26,6 +26,7 @@ require('dotenv').config()
   controllers: [],
   providers: [],
 })
+
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer

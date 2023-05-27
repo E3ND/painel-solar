@@ -1,5 +1,13 @@
-export const calculationPainel  = async(potenciaTotalKW, potenciaPlaca, comprimento, largura) => {
-    var results = {
+export const calculationPainel  = async(potenciaTotalKW:number, potenciaPlaca:number, comprimento:number, largura:number) => {
+    let results: {
+        qtsPlaca:number, 
+        inversores:number, 
+        potenciaPlaca:number, 
+        comprimento:number, 
+        largura:number, 
+        comprimentoTotal:number, 
+        areaTotal:number
+    } = {
         qtsPlaca: null,
         inversores: null,
         potenciaPlaca: null,
@@ -7,7 +15,8 @@ export const calculationPainel  = async(potenciaTotalKW, potenciaPlaca, comprime
         largura: null,
         comprimentoTotal: null,
         areaTotal: null,
-    }
+    } 
+
     const potenciaTotal = potenciaTotalKW * 1000;
     
     const qtsPlaca = Math.ceil(potenciaTotal / potenciaPlaca) 

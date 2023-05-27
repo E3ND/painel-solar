@@ -131,14 +131,4 @@ export class UserController {
         res.status(200).send(currentUser)
         return
     }
-
-    @Put('/update/:id')
-    public update(): any {
-        return { data: 'update!!' }
-    }
-
-    @Delete('/delete/:id')
-    public delete(): any {
-        return { data: 'delete!!' }
-    }
 }
