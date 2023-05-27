@@ -60,6 +60,8 @@ DATABASE=nome da databse
 ```
 Neste bloco vai ser colocado os arquivos de configuração do seu banco de dados para assim efetuar a conexão. 
 
+Na pasta ```src``` em ```app.module.ts``` é importante mudar o ```type``` para o banco de dados no qual deseja usar.
+
 É importante que o banco que vai ser utilizado tenha compatibilidade com o TypeORM.
 
 https://typeorm.io/data-source-options
