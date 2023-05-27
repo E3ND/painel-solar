@@ -22,52 +22,54 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Sobre o projeto
+O projeto tem como objetivo criar uma equação que determine a área de um painel solar, a sua voltagem e o número de painéis solares necessário para suprir a demanda de voltagem exigida.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Após isso projeto calcula e cadastra no banco de dados o resultado, assim gerando uma API para se conectar ao Front-End.
 
-## Installation
+## Importante
+Para poder cadastrar um cálculo é necessário estar autenticado na API.
 
-```bash
-$ npm install
+Para isso se deve efetuar o cadastro/login e pegar o token gerado e colocar no ```Bearer Token``` do software no qual você usa para fazer requisições.
+
+# Tecnologias utilizadas
+- NodeJS
+- NestJS
+- TypeORM
+- MySQL
+
+# Como executar o projeto
+Pré-requisitos: 
+- NodeJS https://nodejs.org/en
+
+Clone o repositório
+```
+git clone https://github.com/E3ND/painel-solar
 ```
 
-## Running the app
+Execute no terminal o seguinte comando:
+```npm install``` para instalar todas as dependências necessárias para rodar o projeto.
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+Na raiz do projeto crie um arquivo chamado ```.env``` e preencha da seguinte forma:
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+HOST=seu host
+PORT=sua porta
+USERNAMEE=nome
+PASSWORD=senha
+DATABASE=nome da databse
 ```
+Neste bloco vai ser colocado os arquivos de configuração do seu banco de dados para assim efetuar a conexão. 
 
-## Support
+É importante que o banco que vai ser utilizado tenha compatibilidade com o TypeORM.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+https://typeorm.io/data-source-options
 
-## Stay in touch
+Após isso, no terminal do projeto rode o comando ```npm run start:dev``` para rodar a aplicação.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Documentação utilizada para a realização do projeto:
 
-## License
+https://docs.nestjs.com/
+
+https://typeorm.io/
 
 Nest is [MIT licensed](LICENSE).
