@@ -25,19 +25,3 @@ export class verifyToken implements NestMiddleware {
     }
   }
 }
-
-// export const verifyToken = (req, res, next) => {
-//     const token = getToken(req)
-
-//     if(!token) {
-//         return res.status(404).json({ message: 'Acesso negado!' })
-//     }
-
-//     try {
-//         const verified = jwt.verify(token, 'gkahj2oas12maxz')
-//         next()
-//         return verified
-//     } catch (error) {
-//         return res.status(400).json({ message: 'Token inválido' })
-//     }
-// }
